@@ -2,5 +2,7 @@
 
 body {
   margin: 0;
-  @apply bg-slate-200;
+}
+.scrollbar::-webkit-scrollbar{
+  width: 10px;
 }
