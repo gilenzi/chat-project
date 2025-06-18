@@ -1,15 +1,14 @@
-import { Toaster } from 'react-hot-toast';
 import {Outlet} from 'react-router-dom';
+import {Toaster} from 'react-hot-toast';
 
 function App() {
   return (
     <>
-    <Toaster />
-    <main>
-      <Outlet />
-    </main>
+      <Toaster />
+      <main>
+        <Outlet />
+      </main>
     </>
-
   );
 }
 

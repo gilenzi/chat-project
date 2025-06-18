@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 
-const ConversationSchema = new mongoose.schema(
+const ConversationSchema = new mongoose.Schema(
   {
     sender: {
-      type: mongoose.schema.ObjectId,
+      type: mongoose.Schema.ObjectId,
       required: true,
       ref: 'User',
     },
     receiver: {
-      type: mongoose.schema.ObjectId,
+      type: mongoose.Schema.ObjectId,
       required: true,
       ref: 'User',
     },

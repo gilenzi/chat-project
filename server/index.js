@@ -2,10 +2,11 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
-const app = express();
+// const app = express();
 const connectDB = require('./config/connect-db');
 const router = require('./routes');
 const cookiesParser = require('cookie-parser');
+const {app, server} = require('./socket/index');
 
 app.use(
   cors({
@@ -27,7 +28,7 @@ app.get('/', (req, res) => {
 app.use('/api', router);
 
 connectDB().then(() => {
-  app.listen(PORT, () => {
+  server.listen(PORT, () => {
     console.log('Server running at', PORT);
   });
 });
