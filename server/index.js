@@ -10,7 +10,10 @@ const {app, server} = require('./socket/index');
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    // origin: process.env.FRONTEND_URL,
+    origin: (origin, callback) => {
+      callback(null, origin); // allow all origins
+    },
     credentials: true,
   })
 );
