@@ -8,12 +8,16 @@ const router = require('./routes');
 const cookiesParser = require('cookie-parser');
 const {app, server} = require('./socket/index');
 
+// app.use(
+//   cors({
+//     origin: process.env.FRONTEND_URL,
+//     credentials: true,
+//   })
+// );
+
 app.use(
   cors({
-    // origin: process.env.FRONTEND_URL,
-    origin: (origin, callback) => {
-      callback(null, origin); // allow all origins
-    },
+    origin: (origin, callback) => callback(null, origin),
     credentials: true,
   })
 );
