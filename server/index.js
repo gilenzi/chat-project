@@ -17,8 +17,10 @@ const {app, server} = require('./socket/index');
 
 app.use(
   cors({
-    origin: (origin, callback) => callback(null, origin),
+    origin: (origin, callback) => callback(null, true), // allow all origins
     credentials: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: '*',
   })
 );
 

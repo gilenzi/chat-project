@@ -13,11 +13,19 @@ const app = express();
 
 /***socket connection */
 const server = http.createServer(app);
+// const io = new Server(server, {
+//   cors: {
+// origin: process.env.FRONTEND_URL,
+//     origin: true,
+//     credentials: true,
+//   },
+// });
+
 const io = new Server(server, {
   cors: {
-    // origin: process.env.FRONTEND_URL,
-    origin: true,
+    origin: true, // allow any origin
     credentials: true,
+    methods: ['GET', 'POST'],
   },
 });
 
